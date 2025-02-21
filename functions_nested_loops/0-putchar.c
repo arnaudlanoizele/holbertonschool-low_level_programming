@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-* main - Entry putchar stdio
+* main - putchar stdio
 *
 * Return: Always 0 (Success)
 */
