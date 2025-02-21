@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> // Make sure to include this for printf
 #include "main.h"
 /**
 * main - putchar stdio
