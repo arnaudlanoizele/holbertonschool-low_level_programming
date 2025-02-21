@@ -1,4 +1,3 @@
-#include <stdio.h> /* Make sure to include this for printf */
 #include "main.h"
 /**
 * main - putchar stdio
@@ -8,6 +7,14 @@
 
 int main(void)
 {
-	printf("_putchar\n"); /* Explicitly use printf */
+	_putchar('_');
+	_putchar(p);
+	_putchar(u);
+	_putchar(t);
+	_putchar(c);
+	_putchar(h);
+	_putchar(a);
+	_putchar(r);
+	_puchar('\n');
 	return (0);
 }
