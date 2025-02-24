@@ -6,7 +6,7 @@
  * Return: 1 if ch is uppercase else 0
  */
 
-int _isupper(char ch)
+int _isupper(int ch)
 {
 	int result = 0;
 
