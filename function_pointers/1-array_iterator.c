@@ -1,8 +1,3 @@
-/**
-* File: 1-array_iterator
-* Auth: Arnaud Lanoizele
-*/
-
 #include "function_pointers.h"
 #include <stddef.h>
 
