@@ -12,24 +12,26 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	int index = 0;
-
-	list_t *first = malloc(sizeof(list_t));
+	int len = 0;
+	list_t *new = malloc(sizeof(list_t));
 	char *copy = strdup(str);
 
-	if (str == NULL || first == NULL || copy == NULL)
+	if (copy == NULL)
 	{
 		return (NULL);
 	}
-
-	while (str[index] != '\0')
+	if (new == NULL)
 	{
-		index++;
+		return (NULL);
 	}
-	first->next = *head;
-	first->str = copy;
-	first->len = index;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	new->str = copy;
+	new->len = len;
+	new->next = *head;
 
-	*head = first;
-	return (first);
+	*head = new;
+	return (new);
 }
