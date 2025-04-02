@@ -1,13 +1,10 @@
-#ifndef _LIST_H_
-#define _LIST_H_
-#include <stdarg.h>
+#ifndef _LIST_H
+#define _LIST_H
+
 #include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 
 /**
- * struc list_s - singly linked list
+ * struct list_s - singly linked list
  * @str: string - malloc' ed string
  * @len: length of the string
  * @next: points to the next node
