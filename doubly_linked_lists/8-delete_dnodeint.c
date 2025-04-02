@@ -1,43 +1,45 @@
 #include "lists.h"
 
 /**
-* delete_dnodeint_at_index - That deletes the node at index
-*
-* @head: the actual first node
-* @index: is the index of the node that should be deleted index starts at 0
-*
-* Returns: 1 if it succeeded, -1 if it failed
-*/
-
+ * delete_dnodeint_at_index - Deletes the node at a given index in a dlistint_t
+ * @head: Pointer to a pointer to the head of the list
+ * @index: The index of the node to delete, starting from 0
+ *
+ * Return: 1 if it succeeded, -1 if it failed
+ */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
-
 {
-	dlistint_t *tmp = *head;
+	dlistint_t *current;
+	unsigned int i;
 
-	if (*head == NULL)
+	if (!head || !*head) /* Vérifie si la liste est vide */
 		return (-1);
 
-	for (; index != 0; index--)
-	{
-		if (tmp == NULL)
-			return (-1);
-		tmp = tmp->next;
-	}
+	current = *head;
 
-	if (tmp == *head)
+	/* Suppression du premier nœud */
+	if (index == 0)
 	{
-		*head = tmp->next;
-		if (*head != NULL)
+		*head = current->next;
+		if (*head)
 			(*head)->prev = NULL;
+		free(current);
+		return (1);
 	}
 
-	else
-	{
-		tmp->next = tmp->next;
-		if (tmp->next != NULL)
-			tmp->next->prev = tmp->prev;
-	}
+	/* Parcours jusqu'au nœud à supprimer */
+	for (i = 0; current && i < index; i++)
+		current = current->next;
 
-	free(tmp);
+	if (!current) /* Si l'index dépasse la taille de la liste */
+		return (-1);
+
+	/* Mise à jour des pointeurs pour enlever le nœud */
+	if (current->prev)
+		current->prev->next = current->next;
+	if (current->next)
+		current->next->prev = current->prev;
+
+	free(current);
 	return (1);
 }
