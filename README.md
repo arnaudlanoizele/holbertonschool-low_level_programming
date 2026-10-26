@@ -1,2 +1,1 @@
-- 0-preprocessor: A script that runs a C through the processor and save the result into another file.
-- 
+C - Hello, World
