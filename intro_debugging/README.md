@@ -1,2 +1,3 @@
 - 0. Debugging a Counting Function
 - 1. Debugging Nested Loops
+- 2. Debugging State Across Function Calls
