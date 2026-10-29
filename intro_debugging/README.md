@@ -1,1 +1,2 @@
 - 0. Debugging a Counting Function
+- 1. Debugging Nested Loops
